@@ -1,0 +1,12 @@
+import { TestBed } from '@angular/core/testing';
+
+import { MovieQueryService } from './api.service';
+
+describe('ApiService', () => {
+  beforeEach(() => TestBed.configureTestingModule({}));
+
+  it('should be created', () => {
+    const service: MovieQueryService = TestBed.get(MovieQueryService);
+    expect(service).toBeTruthy();
+  });
+});
