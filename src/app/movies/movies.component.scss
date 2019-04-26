@@ -1,6 +1,8 @@
 @import '../scss/variables';
 @import '../scss/mixins';
 @import '../scss/base';
+@import '../scss/media-queries';
+
 
 .movie {
     &--list {
@@ -9,52 +11,53 @@
         color: $base-grey;
     }
     &--item {
-        display: grid;
-        grid-template-columns: 1fr 3fr;
-        grid-template-rows: auto;
-        // align-items: center;
-        max-height: 240px;
-        background: #E9EBEE;
+        display: block;
+        background: $light-grey;
         border: 2px solid #313436;
         border-radius: 8px;
         padding: 16px;
         margin: 20px auto;
+        @include min-width-800 {
+          display: grid;
+          grid-template-columns: 1fr 3fr;
+          grid-template-rows: auto;
+        }
     }
-    &--left {
-        align-self: center;
-    }
-    &--right {
+    &--left, &--right {
         display: flex;
         flex-direction: column;
     }
+    &--left {
+        max-width: 140px;
+        margin: 0 auto 20px auto;
+        @include min-width-800 {
+          margin: 0;
+        }
+    }
+
     &--info {
         display: flex;
         align-items: center;
         margin: 5px 10px 15px 0px;
         font-size: 0.875em;        
-
     }
 
     &--img {
-        max-width: 140px;
-        width: auto;
         border-radius: 8px;
         height: 208px;
     }
     &--title {
-        margin: 0;
+        @extend .title;
         border-bottom: 1px solid $lightest-grey;
-        font-size: 1.5em;
-        font-weight: bold;
         padding-bottom: 3px;
     }
     &--rated {
-        border: 1px solid $lightest-grey;
-        padding: 3px 8px;
-        color: $lightest-grey;
-        border-radius: 3px;
-        margin-right: 12px;
         font-family: $courier;
+        color: $lightest-grey;
+        padding: 3px 8px;
+        margin-right: 12px;
+        border: 1px solid $lightest-grey;
+        border-radius: 3px;
     }
     &--released {
         margin-left: auto;
@@ -65,10 +68,10 @@
     }
     &--button {
         @extend .action-button;
-        margin-left: auto;
         max-width: 193px;
-        margin-top: auto;
-       
+        margin: 20px auto 0;
+        @include min-width-800 {
+          margin: auto 0 0 auto;
+        }
     }
-
 }
