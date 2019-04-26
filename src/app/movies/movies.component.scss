@@ -1,0 +1,33 @@
+$radius: 15px;
+.movie {
+    &--list {
+        // display: grid;
+        max-width: 696px;
+        font-family: 'Open Sans', sans-serif;
+    }
+    &--item {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: auto;
+        // align-items: center;
+        max-height: 240px;
+        background: #E9EBEE;
+        border: 2px solid #313436;
+        border-radius: $radius;
+        padding: 16px;
+        margin: 20px auto;
+    }
+    &--left {
+        align-self: center;
+    }
+    &--img {
+        // max-height: 200px;
+        max-width: 140px;
+        width: auto;
+        border-radius: $radius;
+        height: 208px;
+
+        
+    }
+
+}

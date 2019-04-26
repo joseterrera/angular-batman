@@ -1,12 +1,16 @@
 <h2>MOVIES</h2>
-<ul class="movies">
-  <li *ngFor="let movie of movies">
-    <img src="../assets/{{movie.imdbID}}.jpg"/>
-    <h3>{{movie.Title}}</h3>
-    {{movie.Rated}}
-    {{movie.Runtime}}
-    {{movie.Released}} 
-    {{movie.Plot}}
-    <a href="{{ movie.Website }}"  target="_blank">View on IMDB</a>
+<ul class="movie--list">
+  <li class="movie--item" *ngFor="let movie of movies">
+    <section class="movie--left">
+    <img class="movie--img" src="../assets/{{movie.imdbID}}.jpg"/>
+    </section>
+    <section class="movie--right">
+      <h3 class="movie--title">{{movie.Title}}</h3>
+      <span class="movie-rated">{{movie.Rated}}</span>
+      <span class="movie-runtime">{{movie.Runtime}}</span>
+      <span class="movie--released">{{movie.Released}}</span> 
+      <span class="movie--description">{{movie.Plot}}</span>
+      <a class="movie--button" href="{{ movie.Website }}"  target="_blank">View on IMDB</a>
+    </section>
   </li>
 </ul>
