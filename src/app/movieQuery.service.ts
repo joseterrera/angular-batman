@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { getAllMoviesWithDetails } from './lib/helpers';
+import { getAllMoviesWithDetails } from './lib/omdbHelpers';
 
 @Injectable({
   providedIn: 'root'

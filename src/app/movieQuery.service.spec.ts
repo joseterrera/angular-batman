@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { MovieQueryService } from './api.service';
+import { MovieQueryService } from './movieQuery.service';
 
 describe('ApiService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
