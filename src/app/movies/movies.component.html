@@ -6,10 +6,12 @@
     </section>
     <section class="movie--right">
       <h3 class="movie--title">{{movie.Title}}</h3>
-      <span class="movie-rated">{{movie.Rated}}</span>
-      <span class="movie-runtime">{{movie.Runtime}}</span>
-      <span class="movie--released">{{movie.Released}}</span> 
-      <span class="movie--description">{{movie.Plot}}</span>
+      <div class="movie--info">
+        <span class="movie--rated">{{movie.Rated}}</span>
+        <span class="movie--runtime">{{movie.Runtime}}</span>
+        <span class="movie--released">{{movie.Released}}</span> 
+      </div>
+      <p class="movie--description">{{movie.Plot}}</p>
       <a class="movie--button" href="{{ movie.Website }}"  target="_blank">View on IMDB</a>
     </section>
   </li>
