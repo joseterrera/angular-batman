@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MovieQueryService } from '../movieQuery.service';
 import { responseToJSON } from '../lib/omdbHelpers';
-import {Movie } from '../Movie';
+// import {Movie } from '../Movie';
 
 @Component({
   selector: 'app-movies',
@@ -9,7 +9,7 @@ import {Movie } from '../Movie';
   styleUrls: ['./movies.component.scss']
 })
 export class MoviesComponent implements OnInit {
-  movies: object[] = [];
+  movies = [];
 
   constructor( api: MovieQueryService ) {
     api.fetchMovies('batman').then( i => this.movies = i );

@@ -1,0 +1,13 @@
+@import './mixins';
+.action-button {
+    display: block;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    padding: 10px 44px;
+    border-radius: 3px;
+    font-family: $helvetica;
+    background: #F9B44A;
+    @include box-shadow;
+       
+}
