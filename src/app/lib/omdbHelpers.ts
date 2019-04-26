@@ -87,6 +87,7 @@
       .map( mov => getMovieDetails( mov.imdbID ) )
 
     const movieDetailList = await Promise.all( movieDetailListPromises )
+    console.log(movieDetailList)
     return movieDetailList;
   }
 

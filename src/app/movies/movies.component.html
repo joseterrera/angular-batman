@@ -1,7 +1,12 @@
 <h2>MOVIES</h2>
 <ul class="movies">
   <li *ngFor="let movie of movies">
+    <img src="../assets/{{movie.imdbID}}.jpg"/>
     <h3>{{movie.Title}}</h3>
     {{movie.Rated}}
+    {{movie.Runtime}}
+    {{movie.Released}} 
+    {{movie.Plot}}
+    <a href="{{ movie.Website }}"  target="_blank">View on IMDB</a>
   </li>
 </ul>
