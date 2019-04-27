@@ -1,0 +1,11 @@
+@import './scss/variables';
+
+.container {
+    max-width: 696px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.main-title {
+    font-family: $open-sans;
+}

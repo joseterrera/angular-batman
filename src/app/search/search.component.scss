@@ -1,0 +1,22 @@
+@import '../scss/variables';
+@import '../scss/mixins';
+@import '../scss/base';
+@import '../scss/media-queries';
+
+.filter {
+    &--container {
+        text-align: right;
+    }
+    &--button {
+        background: $blue;
+        font-size: 0.875em;
+        color: white;
+        padding: 10px 30px;
+
+    }
+  
+}
+
+.mousedown{
+    border: 2px solid greeen;
+  }
