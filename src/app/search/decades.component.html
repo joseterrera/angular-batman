@@ -1,0 +1,35 @@
+
+<div class="decades--container">
+  <input 
+      type="radio" 
+      class="decades--input" 
+      [ngModel]="decade" 
+      (ngModelChange)="filterYears($event)" 
+      value="2000s" 
+      id="2000s"
+      />
+  <label 
+      for="2000s" 
+      class="decades--label">
+      2000s
+  </label>
+  <input 
+      type="radio" 
+      class="decades--input" 
+      [ngModel]="decade" 
+      (ngModelChange)="filterYears($event)" 
+      value="1990s"
+      id="1990s" 
+      checked
+          />
+  <label 
+      for="1990s" 
+      class="decades--label">
+      1990s
+  </label>
+</div>
+
+
+
+
+  
