@@ -1,5 +1,7 @@
 import { Movie } from '../movie'
 import { environment } from './../../environments/environment';
+import 'es6-promise/auto';
+import 'isomorphic-fetch';
 
 export const responseToJSON = (x: any) => x.json();
 export function toYear(year: string): number {
