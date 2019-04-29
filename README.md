@@ -1,5 +1,11 @@
 # Front-End Coding Challenge
 
+# To run this app:
+1. Clone this repo
+2. Run npm install
+3. Run ng serve --open
+
+
 ## Task
 
 Create a simple interface for viewing the latest Batman movies as a vertical list of ten movies which can also be filtered by decade.
