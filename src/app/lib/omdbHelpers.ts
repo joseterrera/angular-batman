@@ -1,5 +1,12 @@
 import { Movie } from '../movie'
-export const responseToJSON = x => x.json()
+import 'es6-promise/auto';
+import 'isomorphic-fetch';
+
+
+export const responseToJSON = (x: any) => x.json();
+export function toYear(year: string): number {
+  return Number(year.match(/\d+/)[0] || 0);
+}
 
 const website = 'http://www.omdbapi.com/'
 const key = '4a0437c7';
@@ -66,11 +73,13 @@ const getDetailUri = configureDetailUri.bind( null, website, key );
 async function getMovieDetails( id: string ) {
   const movieObj = getObjLS( id )
   if (!movieObj) {
-    // console.log('im making an actual network call')
+    console.log('im making an actual network call')
+    // console.log( getDetailUri(id))
     const response = await fetch(getDetailUri(id))
-    .then(() => console.log(response))
       .then(responseToJSON)
-    setObjLS( id, response )
+      .catch(error => console.log(error));
+    setObjLS( id, response );
+    console.log({response});
     return response;
   } else {
     return movieObj;
@@ -92,15 +101,5 @@ export async function getAllMoviesWithDetails( query: string ): Promise<Movie[]>
   return movieDetailList;
 }
 
-// async function allMovies() {
-//   const movies = await getAllMoviesWithDetails(movie);
-//   console.log(movies);
-//   return movies;
-// }
-// allMovies();
 
 
-
-export function toYear(year: string): number {
-  return Number(year.match(/\d+/)[0] || 0);
-}
