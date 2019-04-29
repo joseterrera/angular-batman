@@ -74,9 +74,9 @@ const getDetailUri = configureDetailUri.bind( null, website, key );
 async function getMovieDetails( id: string ) {
   const movieObj = getObjLS( id )
   if (!movieObj) {
-    // this will run if local storage is clear
+    // this line below will run if local storage is clear
     // localStorage.clear()
-    console.log('Api will be called on first load, and then data is saved to local storage')
+    console.log('Movie details are cached to local storage, search query is not.');
     // console.log( getDetailUri(id))
     const response = await fetch(getDetailUri(id))
       .then(responseToJSON)
