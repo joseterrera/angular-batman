@@ -1,7 +1,5 @@
 import { Movie } from '../movie'
-import 'es6-promise/auto';
-import 'isomorphic-fetch';
-
+import { environment } from './../../environments/environment';
 
 export const responseToJSON = (x: any) => x.json();
 export function toYear(year: string): number {
@@ -9,7 +7,7 @@ export function toYear(year: string): number {
 }
 
 const website = 'http://www.omdbapi.com/'
-const key = '4a0437c7';
+const key = environment.apiKey;
 const movie = 'batman';
 /**
  * tie together 3 params domain + apikey + searchquery (which is our movie)
@@ -34,7 +32,8 @@ function setObjLS(objKey: string, value: object) {
   localStorage.setItem(objKey, JSON.stringify( value) )
 }
 /**
- * Retrieve object from local storage and parse it into json (Local storage does not store)
+ * Retrieve object from local storage and parse it
+ * into json (Local storage does not store)
  * @example
  * setObjLS('josefina', {id: 'walks'})
  * console.log('getObj', getObjLS('josefina'));
@@ -73,13 +72,15 @@ const getDetailUri = configureDetailUri.bind( null, website, key );
 async function getMovieDetails( id: string ) {
   const movieObj = getObjLS( id )
   if (!movieObj) {
-    console.log('im making an actual network call')
+    // this will run if local storage is clear
+    // localStorage.clear()
+    console.log('Api will be called on first load, and then data is saved to local storage')
     // console.log( getDetailUri(id))
     const response = await fetch(getDetailUri(id))
       .then(responseToJSON)
       .catch(error => console.log(error));
     setObjLS( id, response );
-    console.log({response});
+    // console.log({response});
     return response;
   } else {
     return movieObj;
