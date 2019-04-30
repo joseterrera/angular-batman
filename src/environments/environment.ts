@@ -4,6 +4,9 @@
 
 
 export const environment = {
+  // api key included here for demonstration purposes
+  // in a real project it would be an enviroment variable
+  // not pushed to the repo.
   apiKey: '4a0437c7',
   production: false
 };
